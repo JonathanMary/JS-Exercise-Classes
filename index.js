@@ -217,6 +217,46 @@ class Airplane {
         + This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
         + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
   */
+//random student grade
+Student.prototype.grade = Math.ceil(Math.random()*100);
+//random modification of student grade
+Instructor.prototype.changeGrade = function(student){
+  student.grade += (Math.floor(Math.random()*10))-5;
+}
+//graduation?
+Student.prototype.graduate = function(){
+  return (this.grade > 70) ? "Congratulations!" : "Get back to work.";
+}
+
+/*
+console.log("------------------- STRETCH TESTS -------------------");
+//create student
+let stud = new Student({
+  name: 'Matt',
+  age: 30,
+  location: 'London',
+  previousBackground: 'Plumber',
+  className: 'WebEU 3',
+  favSubjects: ['JS', 'Node', 'Redux']})
+
+let inst = new Instructor ({
+  name: 'Luis',
+  age: 45,
+  location: 'Provo',
+  specialty: 'SQL',
+  favLanguage: 'C#',
+  catchPhrase: 'Don\'t forget the homies'
+})
+
+console.log("------------- STRETCH TEST -------------");
+console.log(stud.name);
+console.log(stud.grade);
+console.log(inst.name);
+console.log(inst.changeGrade(stud));
+console.log(stud.grade);
+console.log(stud.graduate());
+*/
+
 
 
   //End of Challenge
